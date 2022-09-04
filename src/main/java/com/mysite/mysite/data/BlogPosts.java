@@ -1,4 +1,4 @@
-package com.mysite.mysite.entities;
+package com.mysite.mysite.data;
 
 import java.util.List;
 import java.util.stream.*;
