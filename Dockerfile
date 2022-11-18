@@ -1,4 +1,5 @@
 FROM amazoncorretto:8
-ARG JAR_FILE=build/libs/mysite-0.0.1-SNAPSHOT.jar
+RUN ./gradlew build && java -jar -t build/libs/mysite.jar
+ARG JAR_FILE=build/libs/mysite.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT [ "java","-jar","/app.jar" ]
