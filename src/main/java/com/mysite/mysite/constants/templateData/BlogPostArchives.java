@@ -3,18 +3,20 @@ package com.mysite.mysite.constants.templateData;
 public enum BlogPostArchives{
     HOME_PAGE("Home Page"
     ,"Welcome to my blog!"
-    ,"http://localhost:8080/fromBeginning"
+    ,"/fromBeginning"
     ,"See blog posts from the beginning!")
     
     ,CHRONOLOGICAL_ORDERING("Blog posts in chronological order"
     ,"See blog posts from the beginning!"
-    ,"http://localhost:8080/"
+    ,"/"
     ,"Home Page");
 
     private String title;
     private String heading;
     private String hyperlink;
     private String hyperlinkText;
+    
+    
 
     BlogPostArchives(
         String title
