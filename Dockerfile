@@ -1,4 +1,8 @@
-FROM amazoncorretto:8
-ARG JAR_FILE=build/libs/mysite.jar
+FROM debian
+RUN addgroup -S spring && adduser -S spring -G spring
+FROM amazoncorretto:11
+USER spring:spring
+EXPOSE 8080
+ARG JAR_FILE=build/libs/mysite-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT [ "java","-jar","/app.jar" ]
