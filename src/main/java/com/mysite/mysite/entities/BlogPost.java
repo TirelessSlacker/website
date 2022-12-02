@@ -10,7 +10,25 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "BLOG_POSTS")
-public class BlogPosts {
+public class BlogPost {
+    
+    @Id
+    @GeneratedValue
+    @Column(name = "ID")
+    private Long id;
+
+    @Column(name = "TITLE")
+    private String title;
+
+    @Column(name = "BODY")
+    private String body;
+
+    @Column(name = "DATE_ADDED")
+    private LocalDateTime dateAdded;
+
+    @Column(name = "DATE_MODIFIED")
+    private LocalDateTime dateModified;
+    
 
     public Long getId() {
         return id;
@@ -44,17 +62,11 @@ public class BlogPosts {
         this.dateAdded = dateAdded;
     }
 
-    @Id
-    @GeneratedValue
-    @Column(name = "ID")
-    private Long id;
+    public LocalDateTime getDateModified() {
+        return dateModified;
+    }
 
-    @Column(name = "TITLE")
-    private String title;
-
-    @Column(name = "BODY")
-    private String body;
-
-    @Column(name = "DATE_ADDED")
-    private LocalDateTime dateAdded;
+    public void setDateModified(LocalDateTime dateModified) {
+        this.dateModified = dateModified;
+    }
 }
