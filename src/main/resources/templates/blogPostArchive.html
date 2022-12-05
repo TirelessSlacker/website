@@ -7,9 +7,10 @@
 <body style="text-align:center;">
     <h1 th:text="${blogPostArchive.heading}"></h1>
         <a th:href="${blogPostArchive.hyperlink}" th:text="${blogPostArchive.hyperlinkText}"></a>
-        <div th:each="post: ${blogPosts}">
+        <div th:each="post: ${blogPost}">
             <h2 th:text="${post.postNum}"></h2>
-                <p th:text="${post.text}"></p>
+                <h3 th:text="${post.title}"></h3>
+                    <p th:text="${post.body}"></p>
         </div>
    <a href="https://github.com/TirelessSlacker">My GitHub</a> 
 </body>

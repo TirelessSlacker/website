@@ -15,7 +15,7 @@ public class BlogPost {
     @Id
     @GeneratedValue
     @Column(name = "ID")
-    private Long id;
+    private Integer postNum;
 
     @Column(name = "TITLE")
     private String title;
@@ -30,12 +30,12 @@ public class BlogPost {
     private LocalDateTime dateModified;
     
 
-    public Long getId() {
-        return id;
+    public Integer getPostNum() {
+        return postNum;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPostNum(Integer postNum) {
+        this.postNum = postNum;
     }
 
     public String getTitle() {

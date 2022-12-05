@@ -1,7 +1,6 @@
 package com.mysite.mysite.service;
 
 import java.util.List;
-import java.util.stream.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,11 +19,11 @@ public class BlogPostService {
     }
 
     public List<BlogPost> getChronological() {
-        return blogPostRepository.findAllOrderByIdAsc();
+        return blogPostRepository.findAllByOrderByPostNum();
     }
 
     public List<BlogPost> getReverseChronological() {
-        return blogPostRepository.findAllOrderByIdDesc();
+        return blogPostRepository.findAllByOrderByPostNumDesc();
     }
 
    

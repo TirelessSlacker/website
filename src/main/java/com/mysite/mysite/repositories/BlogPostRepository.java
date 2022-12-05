@@ -9,11 +9,11 @@ import org.springframework.stereotype.Repository;
 import com.mysite.mysite.entities.BlogPost;
 
 @Repository
-public interface BlogPostRepository extends CrudRepository<Long,BlogPost> {
+public interface BlogPostRepository extends CrudRepository<BlogPost,Integer> {
                         
     @Query
-    List<BlogPost> findAllOrderByIdAsc();
+    List<BlogPost> findAllByOrderByPostNum();
 
     @Query
-    List<BlogPost> findAllOrderByIdDesc();
+    List<BlogPost> findAllByOrderByPostNumDesc();
 }

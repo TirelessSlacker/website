@@ -1,4 +1,9 @@
 spring:
+    sql:
+        init:
+            mode: always
+            data-locations:
+            - classpath*:data.sql
     config:
         activate:
             on-profile: local
@@ -8,7 +13,11 @@ spring:
         username: sa
         password: 
     jpa:
+        hibernate:
+            ddl-auto: create-drop
         database-platform: org.hibernate.dialect.H2Dialect
+        defer-datasource-initialization: true
     h2:
         console:
             enabled: true
+
